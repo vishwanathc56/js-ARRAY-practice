@@ -16,3 +16,6 @@ function evenNumbers(array) {
   // return the even array
   return evenArray;
 }
+
+2) Write a function that takes in an array of numbers and returns the sum of all the numbers in the array. For example, if the input array is [1, 2, 3, 4, 5], the function should return 15. If the input array is [10, -2, 5.5, 3], the function should return 16.5.
+
