@@ -74,3 +74,15 @@ const inputArray = [1, 2, 2, 3, 4, 4, 5, 5];
 const outputArray = uniqueNumbers(inputArray);
 console.log(outputArray); // should log [1, 2, 3, 4, 5]
 
+using SET 
+
+function uniqueNumbers(array) {
+  const set = new Set(array);
+  
+  const uniqueArray = Array.from(set);
+
+  return uniqueArray;
+}
+
+//------------------------------------------------------------------------------------------
+
