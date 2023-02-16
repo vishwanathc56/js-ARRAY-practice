@@ -142,21 +142,23 @@ console.log(result2); // should log false
 //       alternative solution 
 
 function hasPairWithSum(array, targetSum) {
-  // create a set to keep track of seen values
-  const seenValues = new Set();
+  // sort the array in ascending order
+  array.sort((a, b) => a - b);
 
-  // iterate through the array
-  for (let i = 0; i < array.length; i++) {
-    // calculate the difference between the target sum and the current element
-    const difference = targetSum - array[i];
+  // use two pointers to search for a pair that sums to the target
+  let left = 0;
+  let right = array.length - 1;
 
-    // if the difference is in the set, we found a pair that sums to the target
-    if (seenValues.has(difference)) {
+  while (left < right) {
+    const sum = array[left] + array[right];
+
+    if (sum === targetSum) {
       return true;
+    } else if (sum < targetSum) {
+      left++;
+    } else {
+      right--;
     }
-
-    // add the current element to the set
-    seenValues.add(array[i]);
   }
 
   // we didn't find a pair that sums to the target
@@ -172,6 +174,7 @@ const inputArray2 = [2, 3, 5, 8];
 const targetSum2 = 12;
 const result2 = hasPairWithSum(inputArray2, targetSum2);
 console.log(result2); // should log false
+
 
 
 
