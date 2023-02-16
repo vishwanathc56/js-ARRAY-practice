@@ -42,17 +42,13 @@ console.log(outputArray); // should log [2, 4, 6]
 3) Write a function that takes in an array of strings and returns a new array that contains only the strings that have more than five characters. For example, if the input array is ["apple", "banana", "kiwi", "orange"], the function should return ["banana", "orange"].
 
 function evenNumbers(array) {
-  // create an empty array to store even integers
   let arr = [];
-
-  // loop through the input array
+  
   for (let i = 0; i < array.length; i++) {
-    // check if the current element is even
    if(array[i].length>5){
        arr.push(array[i]);
    }
   }
-//console.log(sum);
   return arr;
 }
 
@@ -60,3 +56,21 @@ const inputArray = ["apple", "banana", "kiwi", "orange"];
 const outputArray = evenNumbers(inputArray);
 console.log(outputArray);
 //-------------------------------------------------------------------------------------------------------------------------------------
+
+4) Write a function that takes in an array of numbers and returns a new array that contains only the unique numbers from the original array. For example, if the input array is [1, 2, 2, 3, 4, 4, 5, 5], the function should return [1, 2, 3, 4, 5]. If the input array is [1, 1, 2, 3, 3, 3, 4, 5], the function should return [1, 2, 3, 4, 5].
+
+function uniqueNumbers(array) {
+  const uniqueArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (uniqueArray.indexOf(array[i]) === -1) {
+      uniqueArray.push(array[i]);
+    }
+  }
+  return uniqueArray;
+}
+
+const inputArray = [1, 2, 2, 3, 4, 4, 5, 5];
+const outputArray = uniqueNumbers(inputArray);
+console.log(outputArray); // should log [1, 2, 3, 4, 5]
+
