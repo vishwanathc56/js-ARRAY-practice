@@ -105,3 +105,73 @@ console.log(average2); // should log 20
 
 //-----------------------------------------------------------------------------------------------------
 
+6) Write a function that takes in an array of numbers and a target number, and returns a boolean indicating whether any two elements in the array sum to the target number. For example, if the input array is [2, 3, 5, 8] and the target number is 10, the function should return true, because 2 + 8 = 10.
+
+function hasPairWithSum(array, targetSum) {
+  // create a set to keep track of seen values
+  const seenValues = new Set();
+
+  // iterate through the array
+  for (let i = 0; i < array.length; i++) {
+    // calculate the difference between the target sum and the current element
+    const difference = targetSum - array[i];
+
+    // if the difference is in the set, we found a pair that sums to the target
+    if (seenValues.has(difference)) {
+      return true;
+    }
+
+    // add the current element to the set
+    seenValues.add(array[i]);
+  }
+
+  // we didn't find a pair that sums to the target
+  return false;
+}
+
+const inputArray = [2, 3, 5, 8];
+const targetSum = 10;
+const result = hasPairWithSum(inputArray, targetSum);
+console.log(result); // should log true
+
+const inputArray2 = [2, 3, 5, 8];
+const targetSum2 = 12;
+const result2 = hasPairWithSum(inputArray2, targetSum2);
+console.log(result2); // should log false
+
+//       alternative solution 
+
+function hasPairWithSum(array, targetSum) {
+  // create a set to keep track of seen values
+  const seenValues = new Set();
+
+  // iterate through the array
+  for (let i = 0; i < array.length; i++) {
+    // calculate the difference between the target sum and the current element
+    const difference = targetSum - array[i];
+
+    // if the difference is in the set, we found a pair that sums to the target
+    if (seenValues.has(difference)) {
+      return true;
+    }
+
+    // add the current element to the set
+    seenValues.add(array[i]);
+  }
+
+  // we didn't find a pair that sums to the target
+  return false;
+}
+
+const inputArray = [2, 3, 5, 8];
+const targetSum = 10;
+const result = hasPairWithSum(inputArray, targetSum);
+console.log(result); // should log true
+
+const inputArray2 = [2, 3, 5, 8];
+const targetSum2 = 12;
+const result2 = hasPairWithSum(inputArray2, targetSum2);
+console.log(result2); // should log false
+
+
+
