@@ -39,4 +39,24 @@ const outputArray = evenNumbers(inputArray);
 console.log(outputArray); // should log [2, 4, 6]
 //------------------------------------------------------------------------------------------------------------------------------
 
-3)
+3) Write a function that takes in an array of strings and returns a new array that contains only the strings that have more than five characters. For example, if the input array is ["apple", "banana", "kiwi", "orange"], the function should return ["banana", "orange"].
+
+function evenNumbers(array) {
+  // create an empty array to store even integers
+  let arr = [];
+
+  // loop through the input array
+  for (let i = 0; i < array.length; i++) {
+    // check if the current element is even
+   if(array[i].length>5){
+       arr.push(array[i]);
+   }
+  }
+//console.log(sum);
+  return arr;
+}
+
+const inputArray = ["apple", "banana", "kiwi", "orange"];
+const outputArray = evenNumbers(inputArray);
+console.log(outputArray);
+//-------------------------------------------------------------------------------------------------------------------------------------
