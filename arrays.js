@@ -86,3 +86,22 @@ function uniqueNumbers(array) {
 
 //------------------------------------------------------------------------------------------
 
+5) Write a function that takes in an array of numbers and returns the average of all the numbers in the array. For example, if the input array is [1, 2, 3, 4, 5], the function should return 3. If the input array is [10, 20, 30], the function should return 20.
+
+function calculateAverage(array) {
+  const sum = array.reduce((acc, val) => acc + val, 0);
+  
+  const average = sum / array.length;
+  
+  return average;
+}
+const inputArray = [1, 2, 3, 4, 5];
+const average = calculateAverage(inputArray);
+console.log(average); // should log 3
+
+const inputArray2 = [10, 20, 30];
+const average2 = calculateAverage(inputArray2);
+console.log(average2); // should log 20
+
+//-----------------------------------------------------------------------------------------------------
+
