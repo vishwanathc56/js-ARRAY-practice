@@ -180,4 +180,28 @@ console.log(result2); // should log false
 7) Given an array of integers, write a function to find the second highest number in the array. If there are no duplicates in the array, return the highest number. If the array has less than two elements, return null. 
 For example, given the array [1, 2, 3, 4, 5], your function should return 4. If the array is [1, 1, 2, 2, 3, 3], your function should return 2. If the array is [1], your function should return null.
 
+function findSecondHighest(arr) {
+  if (arr.length < 2) {
+    return null;
+  }
+  
+  let max = arr[0];
+  let secondMax = arr[0];
+  
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+      secondMax = max;
+      max = arr[i];
+    } else if (arr[i] > secondMax && arr[i] < max) {
+      secondMax = arr[i];
+    }
+  }
+  
+  if (max === secondMax) {
+    return max;
+  } else {
+    return secondMax;
+  }
+}
+
 
