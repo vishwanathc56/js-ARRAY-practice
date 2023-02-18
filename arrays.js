@@ -194,3 +194,19 @@ function findSecondHighest(arr) {
 }
 
 
+
+Given an array of integers, write a function to remove all duplicate elements and return a new array with only the unique elements. The order of the elements in the new array should be the same as in the original array.
+
+For example, given the array [1, 2, 3, 2, 4, 5, 4], your function should return [1, 2, 3, 4, 5].
+
+function removeDuplicates(arr) {
+  let uniqueArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!uniqueArr.includes(arr[i])) {
+      uniqueArr.push(arr[i]);
+    }
+  }
+  return uniqueArr;
+}
+
+
