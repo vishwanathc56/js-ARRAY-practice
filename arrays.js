@@ -215,6 +215,12 @@ function removeDuplicates(arr) {
 For example, given the arrays [1, 2, 3, 4] and [3, 4, 5, 6], your function should return [3, 4].
 
 function commonElements(arr1, arr2) {
+  return arr1.filter(item => arr2.includes(item));
+}
+
+//                     alternative
+
+function commonElements(arr1, arr2) {
   let commonArr = [];
   for (let i = 0; i < arr1.length; i++) {
     if (arr2.includes(arr1[i])) {
