@@ -209,4 +209,7 @@ function removeDuplicates(arr) {
   return uniqueArr;
 }
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------
+9) Write a function that takes two arrays of integers as input and returns a new array that contains only the elements that are present in both of the input arrays. The order of the elements in the new array doesn't matter.
 
+For example, given the arrays [1, 2, 3, 4] and [3, 4, 5, 6], your function should return [3, 4].
