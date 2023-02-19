@@ -230,3 +230,36 @@ function commonElements(arr1, arr2) {
   return commonArr;
 }
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------
+10)Write a function that takes an array of integers as input and returns the average of the positive integers in the array. If the array is empty or contains only negative numbers, the function should return 0.
+
+For example, given the array [-2, 0, 5, 7, -3, 9], your function should return (5 + 7 + 9) / 3, which is approximately 7.0.
+
+function pnums(arr){
+    const arrlen =  arr.length;
+    let pnos = [];
+    for(let i=0;i<arrlen;i++){
+        if(Math.sign(arr[i])===1)
+        pnos.push(arr[i]);
+        
+    }
+    console.log({pnos})
+    let sum = pnos.reduce((previousValue, currentValue)=> {
+    return previousValue + currentValue;
+});
+
+    return Math.floor(sum/pnos.length);
+}
+
+console.log(pnums([-2, 0, 5, 7, -3, 9]))
+
+//                      alternative using es6 
+
+function averagePositiveNumbers(arr) {
+  const positiveNumbers = arr.filter(num => num > 0);
+  const sum = positiveNumbers.reduce((acc, curr) => acc + curr, 0);
+  const avg = positiveNumbers.length ? sum / positiveNumbers.length : 0;
+  return avg;
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------
