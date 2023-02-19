@@ -263,3 +263,24 @@ function averagePositiveNumbers(arr) {
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
+11) Write a function that takes an array of numbers as input and returns a new array that contains only the unique numbers from the input array, in the order in which they first appear.
+  For example, given the array [1, 2, 3, 2, 1, 4, 5, 4], your function should return [1, 2, 3, 4, 5].
+  
+  function getUniqueNumbers(arr) {
+    const uniqueNumbers = arr.filter((num, index) => arr.indexOf(num) === index);
+    return uniqueNumbers;
+  }
+
+  Note that this solution is not very efficient for very large arrays because it uses the indexOf() method to search the array for each element. 
+  An alternative solution that is more efficient for larger arrays is to use a Set object: 
+  
+  function getUniqueNumbers(arr) {
+    const uniqueNumbers = [...new Set(arr)];
+    return uniqueNumbers;
+  }
+  
+  This solution creates a new Set object from the input array, which automatically removes any duplicate elements. The ... operator is then used to convert the Set object back into an array.
+  This solution is more efficient than the filter() method solution for larger arrays because the Set object uses a hash table to look up elements, which is much faster than the linear search used by the indexOf() method.
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 12)
