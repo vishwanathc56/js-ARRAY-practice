@@ -283,4 +283,27 @@ function averagePositiveNumbers(arr) {
   This solution is more efficient than the filter() method solution for larger arrays because the Set object uses a hash table to look up elements, which is much faster than the linear search used by the indexOf() method.
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
- 12)
+ 12)Write a JavaScript function that takes two arrays of integers as input and returns an array containing the intersection of the two arrays (i.e. the values that are present in both arrays). 
+    The returned array should not contain any duplicates.
+ 
+  function arrayIntersection(arr1, arr2) {
+  const intersection = [];
+
+  for (const num of arr1) {
+    if (arr2.includes(num) && !intersection.includes(num)) {
+      intersection.push(num);
+    }
+  }
+
+  return intersection;
+}
+
+//                        alternative 
+
+function arrayIntersection(arr1, arr2) {
+  return arr1.filter((num, index) => {
+    return arr2.includes(num) && arr1.indexOf(num) === index;
+  });
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------
