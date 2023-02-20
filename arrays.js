@@ -334,5 +334,24 @@ function sumOfEvenSquares(arr) {
   return sum;
 }
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------
+14) Write a JavaScript function that takes an array of strings as input and returns the longest string in the array.
+For example, if the input array is ["apple", "banana", "orange", "kiwi"], the function should return "banana", since it is the longest string in the array.
+Your function should handle the case where the input array is empty by returning null.
+
+  function findLongestString(strings) {
+    if (strings.length === 0) {
+      return null;
+    }
+
+    let longestString = strings[0];
+    for (let i = 1; i < strings.length; i++) {
+      if (strings[i].length > longestString.length) {
+        longestString = strings[i];
+      }
+    }
+
+    return longestString;
+  }
 
 
