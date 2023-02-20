@@ -330,5 +330,30 @@ function arrayIntersection(arr1, arr2) {
 
 console.log(sqnums([1, 2, 3, 4, 5])) // 20 
 
+//let num = [1,2,3,4,5,6,7,8,9,];
+
+// console.log('even numbers are');
+// for (var i = 1 ; i < 10 ; i += 2 ) {
+//   console.log(i);
+// }
+
+
+// console.log('odd numbers are ');
+// for (var i = 2 ; i < 10 ; i += 2 ) {
+//   console.log(i);
+// }
+
+//                        alternative
+
+function sumOfEvenSquares(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      sum += arr[i] ** 2;
+    }
+  }
+  return sum;
+}
+
 
 
