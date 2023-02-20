@@ -307,3 +307,28 @@ function arrayIntersection(arr1, arr2) {
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
+13) Write a function that takes an array of numbers as input and returns the sum of the squares of all even numbers in the array. If the input array is empty or contains no even numbers, the function should return 0.
+  For example, if the input array is [1, 2, 3, 4, 5], the function should return 20, which is the sum of the squares of the even numbers 2 and 4 in the array.
+  
+  function sqnums(arr){
+    const arrlen =  arr.length;
+    let evenos = [];
+    for(let i=0;i<arrlen;i++){
+        if(arr[i] % 2==0){
+            evenos.push(Math.pow(arr[i], 2));
+        }
+        else {
+           // return 0;
+           continue;
+        }
+    }
+    let sum = evenos.reduce((previousValue, currentValue)=> {
+    return previousValue + currentValue;
+    });
+    return sum;
+}
+
+console.log(sqnums([1, 2, 3, 4, 5])) // 20 
+
+
+
