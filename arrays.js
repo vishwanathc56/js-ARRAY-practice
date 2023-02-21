@@ -354,4 +354,41 @@ Your function should handle the case where the input array is empty by returning
     return longestString;
   }
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------
+15) Given an array of integers, write a function sumPairs that finds two numbers in the array that add up to a given sum. The function should return an array containing the indices of the two numbers.
+    For example, if the input array is [2, 5, 6, 7, 10, 11, 13] and the sum is 16, the function should return [2, 4], since the numbers at indices 2 and 4 (6 and 10) add up to 16.
+    If there are multiple pairs of numbers that add up to the sum, return the indices of the first pair found. If there are no such pairs, return an empty array.
+    
+    function getSumPairs(arr, sum) {
+      let pairs = [];
+      let length = arr.length;
+
+      for (let i = 0; i < length; i++) {
+        for (let j = i + 1; j < length; j++) {
+          if (arr[i] + arr[j] === sum) {
+            pairs.push([arr[i], arr[j]]);
+          }
+        }
+      }
+      return pairs;
+    }
+
+    //                        alternative 
+
+    function getSumPairs(arr, sum) {
+      let pairs = [];
+      let map = new Map();
+
+      for (let i = 0; i < arr.length; i++) {
+        let complement = sum - arr[i];
+
+        if (map.has(complement)) {
+          pairs.push([complement, arr[i]]);
+        }
+
+        map.set(arr[i], i);
+      }
+
+      return pairs;
+    }
 
