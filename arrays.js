@@ -449,6 +449,20 @@ Your function should handle the case where the input array is empty by returning
 
       return result;
     }
+  
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+16) Given an array of integers from 1 to n with one number missing, write a function to find the missing number. 
+    For example, if the input array is [1, 2, 3, 5, 6], the output should be 4, since 4 is the missing number.
+
+    function findMissingNumber(arr) {
+      let n = arr.length + 1;
+      let expectedSum = (n * (n + 1)) / 2;
+      let actualSum = arr.reduce((sum, num) => sum + num, 0);
+      return expectedSum - actualSum;
+    }
+
+    let arr = [1, 3, 4, 5, 6, 7, 8, 9, 10];
+    console.log(findMissingNumber(arr)); // Output: 2
 
 
 
