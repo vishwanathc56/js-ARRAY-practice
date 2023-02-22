@@ -464,5 +464,25 @@ Your function should handle the case where the input array is empty by returning
     let arr = [1, 3, 4, 5, 6, 7, 8, 9, 10];
     console.log(findMissingNumber(arr)); // Output: 2
 
+  //                                                                    alternative
+
+     function findMissingNumber(arr) {
+        const n = arr.length + 1;
+        let sum = 0;
+
+        // Calculate sum of all numbers from 1 to n
+        for (let i = 1; i <= n; i++) {
+          sum += i;
+        }
+
+        // Subtract sum of given array from sum of all numbers from 1 to n
+        for (let i = 0; i < arr.length; i++) {
+          sum -= arr[i];
+        }
+
+        // The remaining value is the missing number
+        return sum;
+      }
+
 
 
