@@ -392,6 +392,63 @@ Your function should handle the case where the input array is empty by returning
       return pairs;
     }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------
-16)
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+16)Given an array of integers, write a function that returns a new array where each element is the product of all the other elements in the original array except for itself. 
+   For example, if the input array is [1, 2, 3, 4, 5], the output array should be [120, 60, 40, 30, 24].   
+   function productArray(arr) {
+      const result = [];
+      let leftProduct = 1;
+      let rightProduct = 1;
+
+      // Calculate left product for each element
+      for (let i = 0; i < arr.length; i++) {
+        result[i] = leftProduct;
+        leftProduct *= arr[i];
+      }
+
+      // Calculate right product for each element
+      for (let i = arr.length - 1; i >= 0; i--) {
+        result[i] *= rightProduct;
+        rightProduct *= arr[i];
+      }
+
+      return result;
+    }
+
+    // Example usage
+    const input = [1, 2, 3, 4, 5];
+    const output = productArray(input);
+    console.log(output); // [120, 60, 40, 30, 24]
+  
+  //                                    alternative 
+
+    function arrayProduct(arr) {
+      const leftProducts = [];
+      const rightProducts = [];
+      const n = arr.length;
+
+      // Calculate products of all elements to the left
+      let product = 1;
+      for (let i = 0; i < n; i++) {
+        leftProducts[i] = product;
+        product *= arr[i];
+      }
+
+      // Calculate products of all elements to the right
+      product = 1;
+      for (let i = n - 1; i >= 0; i--) {
+        rightProducts[i] = product;
+        product *= arr[i];
+      }
+
+      // Calculate the product of all other elements for each element
+      const result = [];
+      for (let i = 0; i < n; i++) {
+        result[i] = leftProducts[i] * rightProducts[i];
+      }
+
+      return result;
+    }
+
+
 
